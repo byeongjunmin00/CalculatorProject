@@ -30,4 +30,9 @@ public class Calculator {
         results.add(result);
         return result;
     }
+
+    public ArrayList<Integer> getResults() {
+        return results;
+
+    }
 }
