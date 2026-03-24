@@ -16,6 +16,12 @@ public class App {
             Calculator cal = new Calculator();
             int result = cal.calculate(num1, num2, op);
             System.out.println("결과: " + result);
+
+            System.out.println("더 계산하시겠습니까? (exit 입력시 종료): ");
+            String answer = sc.next();
+            if (answer.equals("exit")) {
+                break;
+            }
         }
     }
 }
