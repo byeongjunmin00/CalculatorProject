@@ -15,6 +15,7 @@ public class App {
 
             Calculator cal = new Calculator();
             int result = cal.calculate(num1, num2, op);
+            System.out.println("결과: " + result);
         }
     }
 }
