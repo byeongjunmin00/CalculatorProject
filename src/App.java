@@ -4,6 +4,7 @@ public class App {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        Calculator cal = new Calculator();
 
         while (true) {
             System.out.println("첫 번째 숫자를 입력하세요: ");
@@ -13,7 +14,6 @@ public class App {
             System.out.println("사칙연산 기호를 입력하세요: ");
             char op = sc.next().charAt(0);
 
-            Calculator cal = new Calculator();
             int result = cal.calculate(num1, num2, op);
             System.out.println("결과: " + result);
 
