@@ -33,6 +33,18 @@ public class Calculator {
 
     public ArrayList<Integer> getResults() {
         return results;
+    }
+
+    public void setResults(ArrayList<Integer> results) {
+        this.results = results;
 
     }
-}
+
+        public void removeFirstResult() {
+            if (!results.isEmpty()) {
+                results.remove(0);
+
+            }
+        }
+
+    }
