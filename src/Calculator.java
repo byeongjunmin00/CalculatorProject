@@ -37,7 +37,6 @@ public class Calculator {
 
     public void setResults(ArrayList<Integer> results) {
         this.results = results;
-
     }
 
         public void removeFirstResult() {
