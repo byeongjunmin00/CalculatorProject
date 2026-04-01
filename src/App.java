@@ -4,7 +4,7 @@ public class App {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Calculator cal = new Calculator();
+        ArithmeticCalculator cal = new ArithmeticCalculator();
 
         while (true) {
             System.out.println("첫 번째 숫자를 입력하세요: ");
@@ -12,9 +12,23 @@ public class App {
             System.out.println("두 번째 숫자를 입력하세요: ");
             int num2 = sc.nextInt();
             System.out.println("사칙연산 기호를 입력하세요: ");
-            char op = sc.next().charAt(0);
+            String input = sc.next();
+            OperatorType op;
+            if(input.equals("+")) {
+                op = OperatorType.ADD;
+            } else if (input.equals("-")) {
+                op = OperatorType.SUB;
+            } else if (input.equals("*")) {
+                op = OperatorType.MUL;
+            } else if (input.equals("/")) {
+                op = OperatorType.DIV;
+            } else {
+                System.out.println("잘못된 연산자입니다");
+                continue;
+            }
 
             int result = cal.calculate(num1, num2, op);
+
             System.out.println("결과: " + result);
 
             System.out.println("삭제하시겠습니까? (yes 입력 시 삭제): ");

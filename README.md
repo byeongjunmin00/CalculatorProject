@@ -42,4 +42,4 @@
 
 - `App.java` 입력과 출력 담당
   
-   - `Calculator.java` 계산 기능, 결과 저장, getter/setter, 삭제 기능을 담당
+   - `ArithmeticCalculator.java` 계산 기능, 결과 저장, getter/setter, 삭제 기능을 담당
