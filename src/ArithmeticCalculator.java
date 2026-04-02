@@ -1,38 +1,40 @@
 import java.util.ArrayList;
 
-public class ArithmeticCalculator {
+public class ArithmeticCalculator<T extends Number> {
 
-    private ArrayList<Integer> results = new ArrayList<>();
+    private ArrayList<T> results = new ArrayList<>();
 
-    public int calculate(int num1, int num2, OperatorType op) {
+    public T calculate(T num1, T num2, OperatorType op) {
 
-        int result = 0;
+        double a = num1.doubleValue();
+        double b = num2.doubleValue();
+        double result;
 
         if (op == OperatorType.ADD) {
-            result = num1 + num2;
+            result = a + b;
         } else if (op == OperatorType.SUB) {
-            result = num1 - num2;
+            result = a - b;
         } else if (op == OperatorType.MUL) {
-            result = num1 * num2;
+            result = a * b;
         } else if (op == OperatorType.DIV) {
-            if (num2 == 0) {
+            if (b == 0) {
                 System.out.println("나눗셈 연산에서 분모에 0이 입력될 수 없습니다");
-                return 0;
+                return null;
             }
 
-            result = num1 / num2;
+            result = a / b;
         }
 
 
-        results.add(result);
-        return result;
+        results.add((T)(Double)result);
+        return (T)(Double)result;
     }
 
-    public ArrayList<Integer> getResults() {
+    public ArrayList<T> getResults() {
         return results;
     }
 
-    public void setResults(ArrayList<Integer> results) {
+    public void setResults(ArrayList<T> results) {
         this.results = results;
     }
 

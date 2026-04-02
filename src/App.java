@@ -4,7 +4,7 @@ public class App {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        ArithmeticCalculator cal = new ArithmeticCalculator();
+        ArithmeticCalculator<Integer> cal = new ArithmeticCalculator<>();
 
         while (true) {
             System.out.println("첫 번째 숫자를 입력하세요: ");
@@ -27,7 +27,7 @@ public class App {
                 continue;
             }
 
-            int result = cal.calculate(num1, num2, op);
+            Integer result = cal.calculate(num1, num2, op);
 
             System.out.println("결과: " + result);
 
