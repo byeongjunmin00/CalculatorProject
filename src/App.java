@@ -4,13 +4,13 @@ public class App {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        ArithmeticCalculator<Integer> cal = new ArithmeticCalculator<>();
+        ArithmeticCalculator<Double> cal = new ArithmeticCalculator<>();
 
         while (true) {
             System.out.println("첫 번째 숫자를 입력하세요: ");
-            int num1 = sc.nextInt();
+            double num1 = sc.nextInt();
             System.out.println("두 번째 숫자를 입력하세요: ");
-            int num2 = sc.nextInt();
+            double num2 = sc.nextInt();
             System.out.println("사칙연산 기호를 입력하세요: ");
             String input = sc.next();
             OperatorType op;
@@ -27,9 +27,12 @@ public class App {
                 continue;
             }
 
-            Integer result = cal.calculate(num1, num2, op);
+            Double result = cal.calculate(num1, num2, op);
 
             System.out.println("결과: " + result);
+            System.out.println("결과값보다 큰 값을 조회할 숫자를 입력하세요");
+            int filterValue = sc.nextInt();
+            cal.getResultsGreatorThan(filterValue);
 
             System.out.println("삭제하시겠습니까? (yes 입력 시 삭제): ");
             String remove = sc.next();

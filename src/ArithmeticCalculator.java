@@ -8,7 +8,7 @@ public class ArithmeticCalculator<T extends Number> {
 
         double a = num1.doubleValue();
         double b = num2.doubleValue();
-        double result;
+        double result = 0;
 
         if (op == OperatorType.ADD) {
             result = a + b;
@@ -30,19 +30,23 @@ public class ArithmeticCalculator<T extends Number> {
         return (T)(Double)result;
     }
 
-    public ArrayList<T> getResults() {
-        return results;
+        public ArrayList<T> getResults() {
+            return results;
     }
 
-    public void setResults(ArrayList<T> results) {
-        this.results = results;
+        public void setResults(ArrayList<T> results) {
+            this.results = results;
     }
 
         public void removeFirstResult() {
             if (!results.isEmpty()) {
                 results.remove(0);
-
             }
         }
+        public void getResultsGreatorThan(double value) {
+            results.stream()
+                    .filter(r -> r.doubleValue() > value)
+                    .forEach(r -> System.out.println(r));
 
+        }
     }
